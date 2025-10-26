@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=BBH+Sans+Bogle&family=Baloo+Bhai+2:wght@400..800&family=Bitcount+Grid+Double:wght@100..900&family=Mozilla+Headline:wght@200..700&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(pink, rgb(183, 1, 183), lightcoral);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(40px);
+  width: 100%;
+  max-width: 480px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input input {
+  background-color: rgb(255, 220, 247);
+  border: 2px solid rgb(72, 0, 61);
+  border-radius: 12px;
+  padding: 10px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.input input::placeholder {
+  font-family: "Baloo Bhai 2", sans-serif;
+  color: black;
+}
+
+.input button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 150, 111);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: gainsboro;
+  border-radius: 30px;
+  padding: 8px 15px;
+  margin-top: 15px;
+  font-family: "BBH Sans Bogle", sans-serif;
+}
+
+.fbutton {
+  display: flex;
+  gap: 12px;
+}
+
+.task {
+  width: 100%;
+  max-width: 480px;
+  height: 45vh;
+  background-color: rgb(71, 71, 71);
+  border-radius: 20px;
+  margin-top: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+}
+
+.to {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.donegreen {
+  background-color: green;
+}
+
+.to p {
+  padding-left: 10px;
+  font-family: "Mozilla Headline", sans-serif;
+  color: white;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-right: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.do {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.do button {
+  background-color: rgb(43, 43, 43);
+  border: none;
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sep {
+  border: 1px dotted rgb(255, 0, 0);
+  width: 100%;
+}
+
+h1 {
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.edit-task {
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(255, 220, 247);
+  padding: 5px;
+  width: 90%;
+}
+
+.edone {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 150, 111);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  color: gainsboro;
+  font-family: cursive;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* 🌐 Responsive Tweaks */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .input input {
+    width: 100%;
+  }
+
+  .task {
+    height: 50vh;
+  }
+
+  .do button {
+    font-size: 0.9rem;
+    padding: 4px;
+  }
+
+  .fbutton p {
+    font-size: 0.85rem;
+  }
+
+  .field p {
+    font-size: 0.9rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>TO-DO List</h1>
+    <div class="container">
+        <div class="input">
+            <input type="text" placeholder="Enter your today's task" class="tasks" name="task" id="ta">
+            <button class="add">Add</button>
+        </div>
+        <div class="field">
+            <p>Task</p>
+            <div class="fbutton"><p>Delete</p><p>Done</p><p>Edit</p></div>
+        </div>
+        <div class="task">
+        </div>
+        <p class="quote">You can do it all💫</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
